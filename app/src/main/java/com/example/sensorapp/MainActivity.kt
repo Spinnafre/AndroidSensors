@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener,TextToSpeech.OnIni
 
                 if (hitResult > THRESHOLD) {
                     Log.d("MOVIMENTO", "Walking");
-                    speakOut("TOCANDO MÚSICA")
+                    speakOut("Musicona.mp3")
                 } else {
                     Log.d("MOVIMENTO", "Stop Walking");
                 }
