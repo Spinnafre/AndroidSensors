@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener,TextToSpeech.OnIni
 
                 if (hitResult > THRESHOLD) {
                     Log.d("MOVIMENTO", "Walking");
-                    speakOut("Musicona.mp3")
+                    speakOut("Música selecionada é a Musicona.mp3")
                 } else {
                     Log.d("MOVIMENTO", "Stop Walking");
                 }
@@ -181,6 +181,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener,TextToSpeech.OnIni
     private fun startStreaming() {
         Toast.makeText(applicationContext, "Playing sound",Toast.LENGTH_SHORT)
 
+        if(startTime>0 && oneTimeOnly){
+            mediaPlayer.seekTo(startTime.toInt());
+        }
         mediaPlayer.start()
 
         finalTime = mediaPlayer.duration.toDouble()
@@ -216,8 +219,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener,TextToSpeech.OnIni
     private fun stopStreaming(){
         Toast.makeText(applicationContext, "Pausing sound",Toast.LENGTH_SHORT).show();
         if(oneTimeOnly){
-            mediaPlayer.seekTo(0)
-            mediaPlayer.pause()
+            mediaPlayer.pause();
         }
 
 

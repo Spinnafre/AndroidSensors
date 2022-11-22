@@ -4,9 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4D4A4A"
-    android:backgroundTint="#5F5B5B"
+    android:background="@color/black"
+    android:backgroundTint="@color/black"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="338dp"
+        android:layout_height="469dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="18dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/textSongTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173"
+        app:srcCompat="@drawable/acdc" />
 
     <SeekBar
         android:id="@+id/seekBar"
@@ -22,48 +39,41 @@
         android:id="@+id/textSongTittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="32dp"
         android:text="Song.mp3"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintBottom_toBottomOf="@+id/textCurrentProgress"
         app:layout_constraintEnd_toStartOf="@+id/textRemainingTime"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toEndOf="@+id/textCurrentProgress" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textCurrentProgress"
+        app:layout_constraintTop_toTopOf="@+id/textCurrentProgress"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textRemainingTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="84dp"
+        android:layout_width="62dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="32dp"
         android:text="Remaining"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/textSongTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textSongTittle"
+        app:layout_constraintTop_toTopOf="@+id/textSongTittle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textCurrentProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="32dp"
         android:text="Current"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="275dp"
-        android:layout_height="487dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="20dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/textSongTittle"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textSongTittle"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/acdc" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
